@@ -1,28 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-*
-{
-    margin:0 ;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+    margin: 0;
     padding: 0;
 }
-body{
+body {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
+    font-size: 16px;
 }
-a{
+a {
     text-decoration: none;
 }
-img{
+img {
     max-width: 100%;
 }
-.wrapper{
-background: linear-gradient(90deg, rgba(245, 245, 245, 1) 0%, rgba(50, 217, 117, 1) 73%, rgba(15, 166, 30, 1) 100%);
+.wrapper {
+    background: linear-gradient(
+        179deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(87, 199, 133, 1) 50%,
+        rgba(11, 77, 21, 1) 100%
+    );
     width: 100%;
 }
-.container{
-    width: 75%;
+.container {
+    width: 90%;
     margin: 0 auto;
 }
-header{
+header {
     padding: 4% 0;
 }
 header .logo {
@@ -30,12 +35,137 @@ header .logo {
     font-size: 29px;
     font-weight: 800;
 }
-header nav{
+header nav {
     float: right;
     width: 50%;
 }
-header nav ul{
+header nav ul li {
+    display: inline-block;
+}
+header nav ul {
     list-style: none;
-    display:flex;
+    display: flex;
     justify-content: space-between;
+    position: relative;
+}
+header span {
+    color: darkgreen;
+}
+
+header nav ul li a {
+    color: darkgreen;
+}
+header nav ul li.active::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    background: darkgreen;
+    position: relative;
+}
+header nav ul li:not(.active):not(.btn) a:hover {
+    transition: all 120ms ease;
+    border-bottom: 3px solid darkgreen;
+}
+header nav ul li.btn a {
+    background: rgb(255, 215, 68);
+    padding: 10px 12px;
+    border-radius: 50px;
+    transition: all 500ms ease;
+}
+
+header nav ul li.btn a:hover {
+    background: rgb(35, 154, 9);
+    color: rgb(239, 244, 239);
+}
+
+.hero {
+    padding-bottom: 10%;
+    position: relative;
+    display: flex;
+}
+
+@media (max-width: 500px) {
+    .hero {
+        display: block;
+    }
+}
+
+.hero--info {
+    width: 60%;
+    padding-top: 5%;
+}
+.hero--info h2 {
+    color: #822b02;
+    font-size: 20px;
+    font-weight: 600;
+}
+.hero--info h1 {
+    color: #06a521;
+    font-size: 40px;
+    font-weight: 600;
+}
+.hero--info p {
+    font-weight: 500;
+    line-height: 300%;
+    margin: 30px 0;
+}
+.hero--info .btn {
+    background: rgb(255, 215, 68);
+    color: darkgreen;
+    border-radius: 50px;
+    padding: 15px 30px;
+    border: 0;
+    transition: all 500ms ease;
+    font-size: 17px;
+}
+.hero--info .btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.hero img {
+    display: flex;
+    top: -100px;
+    right: 200px;
+    width: 30%;
+}
+/* статьи */
+
+.recomedation h3 {
+    font-weight: 600;
+    font-size: 31px;
+    color: rgb(8, 65, 8);
+}
+.recomedation .more {
+    color: rgb(13, 56, 13);
+    background: antiquewhite;
+    border-radius: 50px;
+    padding: 12px 23px;
+    float: right;
+    display: block;
+    transition: all 500ms ease;
+}
+.recomedation .more:hover {
+    transform: scale(1.1);
+}
+.recomedation .article {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px 0;
+    color: #79eeaa;
+    top: 5px;
+}
+.recomedation .article span {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+.block {
+    object-fit: contain;
+    max-width: 20%;
+}
+.recomedation .article img {
+    border-radius: 10px;
+    margin-bottom: 5px;
 }
